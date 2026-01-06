@@ -1,0 +1,2 @@
+LOGGER_EVENT_FIELD = "event"
+LOGGER_JOB_FIELD = "job"

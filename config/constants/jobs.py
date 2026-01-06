@@ -1,0 +1,25 @@
+MIN_SCRAPE_INTERVAL = 30
+DEFAULT_SCRAPE_INTERVAL = 60
+MAX_SCRAPE_INTERVAL = 120
+DEFAULT_REFRESH_INTERVAL = 60
+MIN_REFRESH_INTERVAL = 60
+MAX_REFRESH_INTERVAL = 300
+DEFAULT_SCRAPE_TIMEOUT = 10
+MIN_SCRAPE_TIMEOUT = 10
+MAX_SCRAPE_TIMEOUT = 30
+
+USERNAME_REGEX = r"^[a-zA-Z0-9#$_.-=]+$"
+PASSWORD_REGEX = r"^[A-Za-z0-9#$_.-=]+$"
+
+JOB_NAME_REGEX = r"^[~a-zA-Z0-9_-]+$"
+TARGETS_REGEX = r"^[a-zA-Z0-9_.:-]+$"
+METRICS_PATH_REGEX = r"^/[a-zA-Z0-9-/._:]*$"
+LABEL_REGEX = r"^[a-zA-Z0-9_]+$"
+LABEL_VALUE_REGEX = r"^[a-zA-Z0-9._-]+$"
+HOST_REGEX = r"^[a-zA-Z0-9-.:_]+$"
+NAMESPACE_REGEX = r"^[a-z0-9-]+$"
+ENDPOINT_REGEX = r"^[a-zA-Z0-9:/_.-]+$"
+FORBIDDEN_LABELS = ["collector_cluster", "job", "instance", "maas_pool"]
+COLLECTOR_CLUSTER_REGEX = r"^ocp4-[a-zA-Z0-9_.-]+$"
+MAAS_POOL_NAME_REGEX = r"^maas-[A-Za-z0-9_.-]+$"
+
