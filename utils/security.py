@@ -1,5 +1,7 @@
 from cryptography.fernet import Fernet
 
+from config import config
+
 
 class SecurityManager:
     def __init__(self, key: str):
@@ -11,3 +13,6 @@ class SecurityManager:
 
     def decrypt(self, cipher_text: str) -> str:
         return self._cypher_suite.decrypt(cipher_text.encode()).decode()
+
+
+security_manager = SecurityManager(config["security"]["secret_key"])

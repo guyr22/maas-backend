@@ -1,0 +1,31 @@
+
+general:
+  app_name: maas-backend
+
+db:
+  connection_string: $MONGO_CONNECTION_STRING
+
+security:
+  secret_key: oxcoXcoAuFdiLSKSbs4AYZZFFlXt-48lJclE0yl1EYrc=
+
+kafka:
+  servers: [$KAFKA_SERVERS]
+  topic: $KAFKA_TOPIC
+  security_protocol: SASL_PLAINTEXT
+  sasl_mechanism: SCRAM-SHA-256
+  sasl_username: $KAFKA_USERNAME
+  sasl_password: $KAFKA_PASSWORD
+
+logs:
+  base_level: DEBUG
+  logstash:
+    enabled: false
+    lebel: DEBUG
+    host: $LOGSTASH_HOST
+    port: $LOGSTASH_PORT
+    transport_type: logstash_async.transport.HttpTransport
+  console:
+    level: DEBUG
+    format: "%(asctime)-24s\t%(levelname)-5s\t%(name)-12s\t%(message)s"
+    
+  

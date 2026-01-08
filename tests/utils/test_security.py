@@ -1,8 +1,11 @@
+import pytest
+from cryptography.fernet import InvalidToken
+
 from utils.security import SecurityManager
 
 
 def test_encryption_decryption():
-    key = "BTzc1lV49sN6hmpQpUDIIKyZz-a5wwEskY_fsi6kGEDk="
+    key = "Tl9K-DqB_FvT_Hw-yQoyZzJz_ZzJz_ZzJz_ZzJz_ZzI="
     manager = SecurityManager(key)
     original_text = "secret message"
     encrypted = manager.encrypt(original_text)
@@ -12,5 +15,8 @@ def test_encryption_decryption():
 
 
 def test_decrypt_invalid_token_raises_error():
-    # Example of what else we could test, but let's stick to the basics first
-    pass
+    key = "Tl9K-DqB_FvT_Hw-yQoyZzJz_ZzJz_ZzJz_ZzJz_ZzI="
+    manager = SecurityManager(key)
+
+    with pytest.raises(InvalidToken):
+        manager.decrypt("invalid-token-data")
